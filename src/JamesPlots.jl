@@ -11,6 +11,9 @@ const COLUMN_WIDTH = 240
 const TWO_COLUMN_WIDTH = 481
 const RESOLUTION = (COLUMN_WIDTH, COLUMN_WIDTH/MathConstants.golden)
 
+const NICECOLORS = ColorScheme(parse.(Colorant, ["#FCE1A4","#FABF7B","#F08F6E","#E05C5C","#D12959","#AB1866","#6E005F"]))
+const DIVERGINGCOLORS = ColorScheme(parse.(Colorant,["#045275","#089099","#7CCBA2","#FCDE9C","#F0746E","#DC3977","#7C1D6F"]))
+
 export MyAxis
 export save_figure
 export COLORS
@@ -88,7 +91,12 @@ function get_theme(;scale, ncolors)
             padding=(3scale, 3scale, 2scale, 2scale),
             merge=true,
             labelsize=8scale,
-    )
+        ),
+        Colorbar=(
+            tickalign=scale,
+            ticksize=3scale,
+            lip_vertical_label=true
+        )
     )
 end
 
