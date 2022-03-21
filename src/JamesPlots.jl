@@ -73,6 +73,7 @@ function get_theme(;scale, ncolors)
             yticksize=3scale,
             xlabelpadding=scale,
             ylabelpadding=scale,
+            aspect=AxisAspect(MathConstants.golden)
         ),
         palette=(patchcolor=collect(color), color=color),
         Lines=(
@@ -96,7 +97,7 @@ function get_theme(;scale, ncolors)
             tickalign=scale,
             ticksize=3scale,
             lip_vertical_label=true
-        )
+        ),
     )
 end
 
