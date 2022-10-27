@@ -52,7 +52,7 @@ function get_theme(;scale, ncolors)
         figure_padding=1,
         rowgap=0,
         colgap=0,
-        font="Times New Roman", fontsize=8 * scale,
+        fontsize=8scale,
         Axis=(
             xminorticksvisible=true,
             yminorticksvisible=true,
@@ -79,8 +79,8 @@ function get_theme(;scale, ncolors)
             linewidth=1.5scale,
         ),
         Scatter=(
-            strokewidth=scale,
-            markersize=4scale
+            strokewidth=0.75scale,
+            markersize=3.5scale
         ),
         Legend=(
             framevisible=true,
@@ -91,6 +91,11 @@ function get_theme(;scale, ncolors)
             padding=(3scale, 3scale, 2scale, 2scale),
             merge=true,
             labelsize=8scale,
+            linewidth=1.5scale,
+            markersize=3.5scale,
+            markerstrokewidth=0.75scale,
+            titlesize=8scale,
+            titlegap=0
         ),
         Colorbar=(
             tickalign=scale,
