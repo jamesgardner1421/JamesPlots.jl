@@ -43,7 +43,7 @@ function choose_color(ncolors)
     return [COLORS[i] for i in select]
 end
 
-function get_theme(;scale, ncolors)
+function get_theme(;scale, ncolors, markersize)
 
     color = choose_color(ncolors)
 
@@ -80,7 +80,7 @@ function get_theme(;scale, ncolors)
         ),
         Scatter=(
             strokewidth=0.75scale,
-            markersize=3.5scale
+            markersize=markersize*scale
         ),
         Legend=(
             framevisible=true,
@@ -92,7 +92,7 @@ function get_theme(;scale, ncolors)
             merge=true,
             labelsize=8scale,
             linewidth=1.5scale,
-            markersize=3.5scale,
+            markersize=markersize*scale,
             markerstrokewidth=0.75scale,
             titlesize=8scale,
             titlegap=0
@@ -105,8 +105,8 @@ function get_theme(;scale, ncolors)
     )
 end
 
-function save_figure(file, plot_function; scale=1, ncolors=3)
-    theme = get_theme(;scale, ncolors)
+function save_figure(file, plot_function; scale=1, ncolors=3, markersize=3.5)
+    theme = get_theme(;scale, ncolors, markersize)
     with_theme(theme) do 
         save(file, plot_function(); px_per_unit=4, pt_per_unit=1)
     end
