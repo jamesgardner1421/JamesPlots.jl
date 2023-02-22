@@ -53,7 +53,7 @@ function get_theme(;scale, ncolors, markersize)
         rowgap=0,
         colgap=0,
         fontsize=8scale,
-        fonts=(;regular="Myriad Pro"),
+        fonts=(;regular="Gill Sans"),
         Axis=(
             xminorticksvisible=true,
             yminorticksvisible=true,
