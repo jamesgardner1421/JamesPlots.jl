@@ -43,7 +43,7 @@ function choose_color(ncolors)
     return [COLORS[i] for i in select]
 end
 
-function get_theme(;scale, ncolors, markersize)
+function get_theme(;scale, ncolors, markersize, fontsize)
 
     color = choose_color(ncolors)
 
@@ -52,8 +52,8 @@ function get_theme(;scale, ncolors, markersize)
         figure_padding=1,
         rowgap=0,
         colgap=0,
-        fontsize=8scale,
-        fonts=(;regular="Gill Sans"),
+        fontsize=fontsize,
+        fonts=(;regular="Palatino"),
         Axis=(
             xminorticksvisible=true,
             yminorticksvisible=true,
@@ -91,7 +91,7 @@ function get_theme(;scale, ncolors, markersize)
             patchlabelgap=3scale,
             padding=(3scale, 3scale, 2scale, 2scale),
             merge=true,
-            labelsize=8scale,
+            labelsize=fontsize,
             linewidth=1.5scale,
             markersize=markersize*scale,
             markerstrokewidth=0.75scale,
@@ -106,8 +106,8 @@ function get_theme(;scale, ncolors, markersize)
     )
 end
 
-function save_figure(file, plot_function; scale=1, ncolors=3, markersize=3.5)
-    theme = get_theme(;scale, ncolors, markersize)
+function save_figure(file, plot_function; scale=1, ncolors=3, markersize=3.5, fontsize=10)
+    theme = get_theme(;scale, ncolors, markersize, fontsize)
     with_theme(theme) do 
         save(file, plot_function(); px_per_unit=4, pt_per_unit=1)
     end

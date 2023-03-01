@@ -1,7 +1,7 @@
 name = "JamesPlots"
 uuid = "65b38e5c-fa97-498f-814c-2dc0ae7de8a9"
 authors = ["James Gardner <james.gardner1421@gmail.com> and contributors"]
-version = "0.1.4"
+version = "0.1.5"
 
 [deps]
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
