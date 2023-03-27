@@ -10,6 +10,7 @@ const COLORS = ColorScheme(parse.(Colorant, ["#ff1f5b", "#00cd6c", "#009ade", "#
 const COLUMN_WIDTH = 240
 const TWO_COLUMN_WIDTH = 481
 const RESOLUTION = (COLUMN_WIDTH, COLUMN_WIDTH/MathConstants.golden)
+const THESIS_WIDTH = 334
 
 const NICECOLORS = ColorScheme(parse.(Colorant, ["#FCE1A4","#FABF7B","#F08F6E","#E05C5C","#D12959","#AB1866","#6E005F"]))
 const DIVERGINGCOLORS = ColorScheme(parse.(Colorant,["#045275","#089099","#7CCBA2","#FCDE9C","#F0746E","#DC3977","#7C1D6F"]))
@@ -17,6 +18,10 @@ const DIVERGINGCOLORS = ColorScheme(parse.(Colorant,["#045275","#089099","#7CCBA
 export MyAxis
 export save_figure
 export COLORS
+export THESIS_WIDTH
+export COLUMN_WIDTH
+export TWO_COLUMN_WIDTH
+export RESOLUTION
 
 function MyAxis(f; kwargs...)
     my_ax = Axis(f; kwargs...)
