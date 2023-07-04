@@ -34,6 +34,19 @@ function MyAxis(f; kwargs...)
     return my_ax
 end
 
+function hideaxislabels!(ax)
+    for i in axes(ax,1)
+        for j in axes(ax,2)
+            if i != size(ax,1)
+                hidexdecorations!(ax[i,j]; ticks=false, minorticks=false)
+            end
+            if j > 1
+                hideydecorations!(ax[i,j]; ticks=false, minorticks=false)
+            end
+        end
+    end
+end
+
 function choose_color(ncolors)
 
     selectors = [
@@ -58,7 +71,7 @@ function get_theme(;scale, ncolors, markersize, fontsize)
         rowgap=0,
         colgap=0,
         fontsize=fontsize,
-        fonts=(;regular="Palatino"),
+        fonts=(;regular="MinionPro-Capt"),
         Axis=(
             xminorticksvisible=true,
             yminorticksvisible=true,
